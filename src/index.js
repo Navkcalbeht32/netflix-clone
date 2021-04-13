@@ -5,7 +5,6 @@ import App from './App';
 import { FirebaseContext } from './context/firebase'
 
 
-
 const config = {
     apiKey: "AIzaSyBvB35J_sIWzgw_KnaWHZNIsnMImqltwjw",
     authDomain: "streaming-project-3ecd8.firebaseapp.com",
@@ -17,8 +16,8 @@ const config = {
 }
 
 // Initialize Firebase
-
 const firebase = window.firebase.initializeApp(config);
+
 
 
 

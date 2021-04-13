@@ -13,7 +13,7 @@ export function BrowseContainer({slides}) {
     const [slideRows, setSlideRows] = useState([]);
     
     const { firebase } = useContext(FirebaseContext);
-    
+     
     const user = {
         displayName: "Alex",
         photoURL: "1"
@@ -24,10 +24,11 @@ export function BrowseContainer({slides}) {
             setLoading(false)
         }, 3000);
     }, [user])
-
+    
     useEffect(() => {
         setSlideRows(slides[category]);
     }, [slides, category]);
+    
     
     return profile.displayName ? (
         <>
@@ -77,8 +78,7 @@ export function BrowseContainer({slides}) {
             </Header>
 
             <Card.Group>
-                {
-                slideRows.map((slideItem) => {
+                {slideRows.map((slideItem) => (
                     <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
                         <Card.Title>{slideItem.title}</Card.Title>
                         <Card.Entities>
@@ -92,9 +92,11 @@ export function BrowseContainer({slides}) {
                                 </Card.Item>
                             ))}
                         </Card.Entities>
+                        <Card.Feature category={category}>
+                            <p>I am the feature!</p>
+                        </Card.Feature>
                     </Card>
-                })
-                }
+                ))}
             </Card.Group>
 
             <FooterContainer />

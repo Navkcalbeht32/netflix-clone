@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes'
 import { Browse, Home, Signin, Signup } from './pages'
+
+import seedDatabase from './seed';
  
 export default function App() {
   return (
